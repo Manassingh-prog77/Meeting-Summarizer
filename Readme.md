@@ -1,4 +1,4 @@
-echo '# AI Meeting Notes Summarizer
+# AI Meeting Notes Summarizer
 
 An AI-powered full-stack application that summarizes meeting transcripts or documents into well-structured, easy-to-understand summaries. Users can either paste meeting conversation transcripts or upload transcript files (TXT or PDF), and receive detailed summaries highlighting key points, action items, attendance, and topics discussed — all presented in clean Markdown format.
 
