@@ -1,3 +1,4 @@
+````markdown
 # AI Meeting Notes Summarizer
 
 An AI-powered full-stack application that summarizes meeting transcripts or documents into well-structured, easy-to-understand summaries. Users can either paste meeting conversation transcripts or upload transcript files (TXT or PDF), and receive detailed summaries highlighting key points, action items, attendance, and topics discussed — all presented in clean Markdown format.
@@ -79,137 +80,144 @@ Accepts either a JSON body with transcript text or a multipart form with a trans
   {
     "content": "Full meeting transcript text here..."
   }
-Multipart Form-Data (file upload):
+````
 
-file: .txt or .pdf file
+* **Multipart Form-Data (file upload):**
 
-Response:
+  * `file`: `.txt` or `.pdf` file
 
-json
-Copy
-Edit
+**Response:**
+
+```json
 {
   "summary": "Markdown formatted meeting summary string"
 }
-Error Codes:
+```
 
-400: Missing or invalid input
+**Error Codes:**
 
-500: Internal server error or API failure
+* `400`: Missing or invalid input
+* `500`: Internal server error or API failure
 
-Frontend Overview
-React-based chat UI with:
+---
 
-Textarea for transcript input
+## Frontend Overview
 
-File upload (.txt, .pdf) with preview & clear option
+* React-based chat UI with:
 
-Dark/light theme toggle
+  * Textarea for transcript input
+  * File upload (.txt, .pdf) with preview & clear option
+  * Dark/light theme toggle
+  * Submit button triggering AI summarization
+  * Chat bubbles for user inputs & AI responses
+  * Copy/download buttons for summaries
+  * Auto-scroll for smooth conversation flow
 
-Submit button triggering AI summarization
+---
 
-Chat bubbles for user inputs & AI responses
+## Setup and Installation
 
-Copy/download buttons for summaries
+### Prerequisites
 
-Auto-scroll for smooth conversation flow
+* Node.js (v16+)
+* npm or Yarn
+* Google Cloud account with Gemini API key
 
-Setup and Installation
-Prerequisites
-Node.js (v16+)
+### Backend Setup
 
-npm or Yarn
+1. Clone repo & navigate to backend:
 
-Google Cloud account with Gemini API key
+   ```bash
+   cd backend
+   ```
 
-Backend Setup
-Clone repo & navigate to backend:
+2. Install dependencies:
 
-bash
-Copy
-Edit
-cd backend
-Install dependencies:
+   ```bash
+   npm install
+   ```
 
-bash
-Copy
-Edit
-npm install
-Set Gemini API key as environment variable:
+3. Set Gemini API key as environment variable:
 
-Linux/macOS:
+   **Linux/macOS:**
 
-bash
-Copy
-Edit
-export GEMINI_API_KEY="your_api_key_here"
-Windows (PowerShell):
+   ```bash
+   export GEMINI_API_KEY="your_api_key_here"
+   ```
 
-powershell
-Copy
-Edit
-setx GEMINI_API_KEY "your_api_key_here"
-Start backend server:
+   **Windows (PowerShell):**
 
-bash
-Copy
-Edit
-npm run dev
-Server listens on port 4000 by default.
+   ```powershell
+   setx GEMINI_API_KEY "your_api_key_here"
+   ```
 
-Frontend Setup
-Navigate to frontend:
+4. Start backend server:
 
-bash
-Copy
-Edit
-cd frontend
-Install dependencies:
+   ```bash
+   npm run dev
+   ```
 
-bash
-Copy
-Edit
-npm install
-Start dev server:
+   Server listens on port `4000` by default.
 
-bash
-Copy
-Edit
-npm run dev
-Open browser at the shown local URL (e.g., http://localhost:5173).
+### Frontend Setup
 
-Usage
-Paste a transcript or upload .txt / .pdf.
+1. Navigate to frontend:
 
-Click Send / Generate Summary.
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
 
-Wait for AI to generate a structured Markdown summary.
+   ```bash
+   npm install
+   ```
+3. Start dev server:
 
-View results in the chat interface.
+   ```bash
+   npm run dev
+   ```
+4. Open browser at the shown local URL (e.g., `http://localhost:5173`).
 
-Copy or download summary as .txt.
+---
 
-Testing
+## Usage
+
+* Paste a transcript or upload `.txt` / `.pdf`.
+* Click **Send / Generate Summary**.
+* Wait for AI to generate a structured Markdown summary.
+* View results in the chat interface.
+* Copy or download summary as `.txt`.
+
+---
+
+## Testing
+
 Use this sample transcript:
 
-vbnet
-Copy
-Edit
+```
 Alice: Good morning everyone, thanks for joining the project kickoff meeting.  
 Bob: Morning, Alice. Excited to get started.  
 Carol: Hello all!  
 David: Hi team!  
 Alice: Let's begin by going over the project goals...
-Future Improvements
-Support .docx and more file types.
+```
 
-Rich text editing for summaries.
+---
 
-Export summaries as styled PDF.
+## Future Improvements
 
-User authentication & history saving.
+* Support `.docx` and more file types.
+* Rich text editing for summaries.
+* Export summaries as styled PDF.
+* User authentication & history saving.
+* Real-time collaboration with multi-user input.
 
-Real-time collaboration with multi-user input.
+---
 
-License
-This project is licensed under the MIT License.
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+```
