@@ -1,4 +1,4 @@
-# AI Meeting Notes Summarizer
+echo '# AI Meeting Notes Summarizer
 
 An AI-powered full-stack application that summarizes meeting transcripts or documents into well-structured, easy-to-understand summaries. Users can either paste meeting conversation transcripts or upload transcript files (TXT or PDF), and receive detailed summaries highlighting key points, action items, attendance, and topics discussed — all presented in clean Markdown format.
 
@@ -140,13 +140,13 @@ The frontend provides a polished, responsive chat-like interface where users can
   **Linux/macOS:**
 
   \`\`\`bash
-  export GEMINI_API_KEY="your_api_key_here"
+  export GEMINI_API_KEY=\"your_api_key_here\"
   \`\`\`
 
   **Windows (PowerShell):**
 
   \`\`\`powershell
-  setx GEMINI_API_KEY "your_api_key_here"
+  setx GEMINI_API_KEY \"your_api_key_here\"
   \`\`\`
 
 4. Start backend server:
@@ -215,3 +215,5 @@ Alice: Let\'s begin by going over the project goals...
 ## License
 
 This project is licensed under the **MIT License**.
+
+---' 
