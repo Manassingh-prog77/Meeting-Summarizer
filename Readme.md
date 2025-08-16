@@ -216,4 +216,3 @@ Alice: Let\'s begin by going over the project goals...
 
 This project is licensed under the **MIT License**.
 
----' 
