@@ -1,0 +1,19 @@
+/* Custom Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #555; /* Dark gray for the scrollbar thumb */
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+
+/* Light theme scrollbar */
+.light .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Light gray for the scrollbar thumb */
+}
