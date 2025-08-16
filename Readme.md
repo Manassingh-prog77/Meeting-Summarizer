@@ -74,11 +74,11 @@ The frontend provides a polished, responsive chat-like interface where users can
 **Request Formats:**
 
 - **JSON Body (text input):**
-  \`\`\`json
+  
   {
     "content": "Full meeting transcript text here..."
   }
-  \`\`\`
+
 
 * **Multipart Form-Data (file upload):**
 
@@ -86,11 +86,9 @@ The frontend provides a polished, responsive chat-like interface where users can
 
 **Response:**
 
-\`\`\`json
 {
   "summary": "Markdown formatted meeting summary string"
 }
-\`\`\`
 
 **Error Codes:**
 
