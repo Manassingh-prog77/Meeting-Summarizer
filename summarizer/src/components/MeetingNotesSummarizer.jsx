@@ -118,12 +118,12 @@ const MeetingNotesSummarizer = () => {
         const formData = new FormData();
         formData.append("file", file);
 
-        response = await fetch("http://localhost:4000/api/summarize", {
+        response = await fetch("https://meeting-summarizer-q99o.onrender.com/api/summarize", {
           method: "POST",
           body: formData,
         });
       } else {
-        response = await fetch("http://localhost:4000/api/summarize", {
+        response = await fetch("https://meeting-summarizer-q99o.onrender.com/api/summarize", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
