@@ -1,4 +1,3 @@
-````markdown
 # AI Meeting Notes Summarizer
 
 An AI-powered full-stack application that summarizes meeting transcripts or documents into well-structured, easy-to-understand summaries. Users can either paste meeting conversation transcripts or upload transcript files (TXT or PDF), and receive detailed summaries highlighting key points, action items, attendance, and topics discussed — all presented in clean Markdown format.
@@ -70,17 +69,16 @@ The frontend provides a polished, responsive chat-like interface where users can
 
 ### `POST /api/summarize`
 
-**Description:**  
-Accepts either a JSON body with transcript text or a multipart form with a transcript file. Parses the input, sends it to Gemini AI, and returns a Markdown summary.
+**Description:** Accepts either a JSON body with transcript text or a multipart form with a transcript file. Parses the input, sends it to Gemini AI, and returns a Markdown summary.
 
 **Request Formats:**
 
 - **JSON Body (text input):**
-  ```json
+  \`\`\`json
   {
     "content": "Full meeting transcript text here..."
   }
-````
+  \`\`\`
 
 * **Multipart Form-Data (file upload):**
 
@@ -88,11 +86,11 @@ Accepts either a JSON body with transcript text or a multipart form with a trans
 
 **Response:**
 
-```json
+\`\`\`json
 {
   "summary": "Markdown formatted meeting summary string"
 }
-```
+\`\`\`
 
 **Error Codes:**
 
@@ -127,55 +125,55 @@ Accepts either a JSON body with transcript text or a multipart form with a trans
 
 1. Clone repo & navigate to backend:
 
-   ```bash
-   cd backend
-   ```
+  \`\`\`bash
+  cd backend
+  \`\`\`
 
 2. Install dependencies:
 
-   ```bash
-   npm install
-   ```
+  \`\`\`bash
+  npm install
+  \`\`\`
 
 3. Set Gemini API key as environment variable:
 
-   **Linux/macOS:**
+  **Linux/macOS:**
 
-   ```bash
-   export GEMINI_API_KEY="your_api_key_here"
-   ```
+  \`\`\`bash
+  export GEMINI_API_KEY="your_api_key_here"
+  \`\`\`
 
-   **Windows (PowerShell):**
+  **Windows (PowerShell):**
 
-   ```powershell
-   setx GEMINI_API_KEY "your_api_key_here"
-   ```
+  \`\`\`powershell
+  setx GEMINI_API_KEY "your_api_key_here"
+  \`\`\`
 
 4. Start backend server:
 
-   ```bash
-   npm run dev
-   ```
+  \`\`\`bash
+  npm run dev
+  \`\`\`
 
-   Server listens on port `4000` by default.
+  Server listens on port `4000` by default.
 
 ### Frontend Setup
 
 1. Navigate to frontend:
 
-   ```bash
-   cd frontend
-   ```
+  \`\`\`bash
+  cd frontend
+  \`\`\`
 2. Install dependencies:
 
-   ```bash
-   npm install
-   ```
+  \`\`\`bash
+  npm install
+  \`\`\`
 3. Start dev server:
 
-   ```bash
-   npm run dev
-   ```
+  \`\`\`bash
+  npm run dev
+  \`\`\`
 4. Open browser at the shown local URL (e.g., `http://localhost:5173`).
 
 ---
@@ -194,13 +192,13 @@ Accepts either a JSON body with transcript text or a multipart form with a trans
 
 Use this sample transcript:
 
-```
+\`\`\`
 Alice: Good morning everyone, thanks for joining the project kickoff meeting.  
 Bob: Morning, Alice. Excited to get started.  
 Carol: Hello all!  
 David: Hi team!  
-Alice: Let's begin by going over the project goals...
-```
+Alice: Let\'s begin by going over the project goals...
+\`\`\`
 
 ---
 
@@ -217,7 +215,3 @@ Alice: Let's begin by going over the project goals...
 ## License
 
 This project is licensed under the **MIT License**.
-
----
-
-```
