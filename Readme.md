@@ -1,4 +1,3 @@
-```markdown
 # AI Meeting Notes Summarizer
 
 An AI-powered full-stack application that summarizes meeting transcripts or documents into well-structured, easy-to-understand summaries. Users can either paste meeting conversation transcripts or upload transcript files (TXT or PDF), and receive detailed summaries highlighting key points, action items, attendance, and topics discussed — all presented in clean Markdown format.
@@ -23,9 +22,9 @@ An AI-powered full-stack application that summarizes meeting transcripts or docu
 
 ## Project Overview
 
-This project leverages Google’s Gemini AI model to transform lengthy meeting transcripts into concise and structured summaries. The app supports both direct text input and file uploads (.txt or .pdf), extracting textual content and passing it to the AI backend for summarization.
+This project leverages **Google’s Gemini AI model** to transform lengthy meeting transcripts into concise and structured summaries. The app supports both direct text input and file uploads (`.txt` or `.pdf`), extracting textual content and passing it to the AI backend for summarization.
 
-The backend calls the Gemini API securely, returning AI-generated markdown summaries that emphasize readability with headings, bullet points, and clear segmentation of information.
+The backend calls the Gemini API securely, returning AI-generated Markdown summaries that emphasize readability with headings, bullet points, and clear segmentation of information.
 
 The frontend provides a polished, responsive chat-like interface where users can paste transcripts or upload files, view AI-generated summaries in real-time, and easily copy or download results.
 
@@ -33,185 +32,182 @@ The frontend provides a polished, responsive chat-like interface where users can
 
 ## Features
 
-- **Dual Input Modes:** Paste transcript text directly or upload a TXT/PDF file.
-- **AI Summarization:** Uses Gemini API to generate detailed, structured summaries.
-- **Markdown Formatting:** Summaries are delivered in Markdown with headings and lists for maximum clarity.
-- **Chat Interface:** Interactive chatbot-style UI with conversational message bubbles.
-- **Copy & Download:** Easily copy summaries to clipboard or download as text files.
-- **Dark/Light Theme:** Toggle between light and dark UI themes for user comfort.
-- **Error Handling:** User-friendly validation messages for missing or invalid inputs.
-- **Responsive Design:** Works seamlessly across mobile, tablet, and desktop devices.
+- **Dual Input Modes:** Paste transcript text directly or upload a TXT/PDF file.  
+- **AI Summarization:** Uses Gemini API to generate detailed, structured summaries.  
+- **Markdown Formatting:** Summaries are delivered in Markdown with headings and lists.  
+- **Chat Interface:** Interactive chatbot-style UI with conversational message bubbles.  
+- **Copy & Download:** Copy summaries to clipboard or download as `.txt`.  
+- **Dark/Light Theme:** Toggle between light and dark UI themes.  
+- **Error Handling:** User-friendly validation messages for missing/invalid inputs.  
+- **Responsive Design:** Works seamlessly across mobile, tablet, and desktop.  
 
 ---
 
 ## Tech Stack
 
 - **Frontend:** React, Tailwind CSS, Lucide React Icons  
-- **Backend:** Node.js, Express.js, Multer (for file uploads), Axios, pdf-parse (for PDF text extraction)  
-- **AI Service:** Google Gemini API (Generative Language Model)  
-- **Deployment:** Can be deployed to platforms supporting Node.js & React (e.g., Vercel, Heroku, Railway, Netlify)  
+- **Backend:** Node.js, Express.js, Multer (file uploads), Axios, pdf-parse (PDF extraction)  
+- **AI Service:** Google Gemini API  
+- **Deployment:** Vercel, Heroku, Railway, Netlify (any Node.js + React host)  
 
 ---
 
 ## Application Flow
 
-1. User visits the frontend interface.
-2. User either pastes a meeting transcript or uploads a `.txt` / `.pdf` transcript file.
-3. Frontend sends the text content or file to the backend API.
-4. Backend extracts text (if file), constructs prompt, and calls Gemini API securely.
-5. Gemini API returns a markdown-formatted summary.
-6. Backend sends the summary to frontend.
-7. Frontend displays the summary in chat bubble format.
-8. User can copy or download the summary.
+1. User visits the frontend.  
+2. User either pastes a meeting transcript or uploads a `.txt`/`.pdf`.  
+3. Frontend sends the text or file to the backend API.  
+4. Backend extracts text (if file), constructs a prompt, and calls Gemini API securely.  
+5. Gemini API returns a Markdown-formatted summary.  
+6. Backend sends the summary back to frontend.  
+7. Frontend displays the summary in chat bubbles.  
+8. User can copy or download the summary.  
 
 ---
 
 ## Backend API Endpoints
 
-### POST `/api/summarize`
+### `POST /api/summarize`
 
-- **Description:** Accepts either a JSON with transcript text or a multipart form with a transcript file. Parses the input, sends it to Gemini AI, and returns a markdown summary.
+**Description:**  
+Accepts either a JSON body with transcript text or a multipart form with a transcript file. Parses the input, sends it to Gemini AI, and returns a Markdown summary.
 
-- **Request Formats:**
+**Request Formats:**
 
-  - **JSON Body (for text input):**  
-    ```
-    {
-      "content": "Full meeting transcript text here..."
-    }
-    ```
-
-  - **Multipart Form-Data (for file upload):**  
-    - `file`: `.txt` or `.pdf` file upload
-
-- **Response:**  
-  ```
+- **JSON Body (text input):**
+  ```json
   {
-    "summary": "Markdown formatted meeting summary string"
+    "content": "Full meeting transcript text here..."
   }
-  ```
+Multipart Form-Data (file upload):
 
-- **Error Codes:**
-  - 400: Missing or invalid input
-  - 500: Internal server error or API failure
+file: .txt or .pdf file
 
----
+Response:
 
-## Frontend Overview
+json
+Copy
+Edit
+{
+  "summary": "Markdown formatted meeting summary string"
+}
+Error Codes:
 
-- React-based chat UI with:
-  - Input textarea for transcript text
-  - File upload (.txt, .pdf) with preview and clear option
-  - Dark/light theme toggle
-  - Submit button that triggers AI summarization
-  - Chat bubbles for user inputs and AI responses
-  - Copy and download buttons on AI messages
-  - Auto-scroll behavior for conversation flow
+400: Missing or invalid input
 
----
+500: Internal server error or API failure
 
-## Setup and Installation
+Frontend Overview
+React-based chat UI with:
 
-### Prerequisites
+Textarea for transcript input
 
-- Node.js (v16+ recommended)
-- NPM or Yarn
-- Google Cloud account with access to Gemini API and API key
+File upload (.txt, .pdf) with preview & clear option
 
-### Backend Setup
+Dark/light theme toggle
 
-1. Clone the repository and navigate to backend directory:
+Submit button triggering AI summarization
 
-   ```
-   cd backend
-   ```
+Chat bubbles for user inputs & AI responses
 
-2. Install dependencies:
+Copy/download buttons for summaries
 
-   ```
-   npm install
-   ```
+Auto-scroll for smooth conversation flow
 
-3. Set your Gemini API key as an environment variable:
+Setup and Installation
+Prerequisites
+Node.js (v16+)
 
-   - Linux/macOS:
-     ```
-     export GEMINI_API_KEY="your_api_key_here"
-     ```
-   - Windows (PowerShell):
-     ```
-     setx GEMINI_API_KEY "your_api_key_here"
-     ```
+npm or Yarn
 
-4. Start the backend server:
+Google Cloud account with Gemini API key
 
-   ```
-   npm run dev
-   ```
-   
-   Backend listens on port `4000` by default.
+Backend Setup
+Clone repo & navigate to backend:
 
-### Frontend Setup
+bash
+Copy
+Edit
+cd backend
+Install dependencies:
 
-1. Navigate to frontend directory:
+bash
+Copy
+Edit
+npm install
+Set Gemini API key as env variable:
 
-   ```
-   cd frontend
-   ```
+Linux/macOS:
 
-2. Install dependencies:
+bash
+Copy
+Edit
+export GEMINI_API_KEY="your_api_key_here"
+Windows (PowerShell):
 
-   ```
-   npm install
-   ```
+powershell
+Copy
+Edit
+setx GEMINI_API_KEY "your_api_key_here"
+Start backend server:
 
-3. Start development server:
+bash
+Copy
+Edit
+npm run dev
+Server listens on port 4000 by default.
 
-   ```
-   npm run dev
-   ```
+Frontend Setup
+Navigate to frontend:
 
-4. Open your browser and go to the provided local URL (e.g., `http://localhost:5173`).
+bash
+Copy
+Edit
+cd frontend
+Install dependencies:
 
----
+bash
+Copy
+Edit
+npm install
+Start dev server:
 
-## Usage
+bash
+Copy
+Edit
+npm run dev
+Open browser at the shown local URL (e.g., http://localhost:5173).
 
-- Paste a full meeting transcript in the text input or upload a transcript file (.txt or .pdf).
-- Click the "Send" or "Generate Summary" button.
-- Wait for the AI to generate a structured summary formatted with bold headings and bullet points.
-- View the summary in the chat interface.
-- Copy the summary to clipboard or download it as a `.txt` file.
+Usage
+Paste a transcript or upload .txt / .pdf.
 
----
+Click Send / Generate Summary.
 
-## Testing
+Wait for AI to generate a structured Markdown summary.
 
-Use this sample transcript for testing:
+View results in the chat interface.
 
-> Alice: Good morning everyone, thanks for joining the project kickoff meeting.  
-> Bob: Morning, Alice. Excited to get started.  
-> Carol: Hello all!  
-> David: Hi team!  
-> Alice: Let's begin by going over the project goals... (continue your full transcript here)
+Copy or download summary as .txt.
 
----
+Testing
+Try with this sample transcript:
 
-## Future Improvements
+Alice: Good morning everyone, thanks for joining the project kickoff meeting.
+Bob: Morning, Alice. Excited to get started.
+Carol: Hello all!
+David: Hi team!
+Alice: Let's begin by going over the project goals...
 
-- Support for more file types (e.g., DOCX).
-- Rich text summary editing within frontend.
-- Export summary as PDF with styled formatting.
-- User authentication and history saving.
-- Real-time collaboration and multiple transcript inputs.
+Future Improvements
+Support .docx and more file types.
 
----
+Rich text editing for summaries.
 
-## License
+Export summaries as styled PDF.
 
+User authentication & history saving.
+
+Real-time collaboration with multi-user input.
+
+License
 This project is licensed under the MIT License.
-
----
-
-> Created as a comprehensive AI meeting notes summarizer powered by Google Gemini and built with modern frontend and backend technologies.
-```
