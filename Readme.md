@@ -135,7 +135,7 @@ bash
 Copy
 Edit
 npm install
-Set Gemini API key as env variable:
+Set Gemini API key as environment variable:
 
 Linux/macOS:
 
@@ -190,14 +190,16 @@ View results in the chat interface.
 Copy or download summary as .txt.
 
 Testing
-Try with this sample transcript:
+Use this sample transcript:
 
-Alice: Good morning everyone, thanks for joining the project kickoff meeting.
-Bob: Morning, Alice. Excited to get started.
-Carol: Hello all!
-David: Hi team!
+vbnet
+Copy
+Edit
+Alice: Good morning everyone, thanks for joining the project kickoff meeting.  
+Bob: Morning, Alice. Excited to get started.  
+Carol: Hello all!  
+David: Hi team!  
 Alice: Let's begin by going over the project goals...
-
 Future Improvements
 Support .docx and more file types.
 
